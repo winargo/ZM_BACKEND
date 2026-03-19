@@ -72,8 +72,8 @@ class SshTunnelStarter {
 		log.info("JSch started");
 		// Get SSH session
 		try {
-			session = jsch.getSession("devuser", "147.139.169.114", 777);
-			session.setPassword("Kokas@jakart4");
+			session = jsch.getSession("devuser", "", 777);
+			session.setPassword("");
 			java.util.Properties config = new java.util.Properties();
 			// Never automatically add new host keys to the host file
 			config.put("StrictHostKeyChecking", "no");
