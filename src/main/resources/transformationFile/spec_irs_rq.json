@@ -1,0 +1,18 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "method": "methodCall.methodName",
+      "#MSISDN": "methodCall.params.param.value.struct.member[0].name",
+      "uid": "methodCall.params.param.value.struct.member[0].value.string",
+      "#REQUESTID": "methodCall.params.param.value.struct.member[1].name",
+      "ref1": "methodCall.params.param.value.struct.member[1].value.string",
+      "#PIN": "methodCall.params.param.value.struct.member[2].name",
+      "pin": "methodCall.params.param.value.struct.member[2].value.string",
+      "#NOHP": "methodCall.params.param.value.struct.member[3].name",
+      "no_hp": "methodCall.params.param.value.struct.member[3].value.string",
+      "#NOM": "methodCall.params.param.value.struct.member[4].name",
+      "kode_produk": "methodCall.params.param.value.struct.member[4].value.string"
+    }
+  }
+]

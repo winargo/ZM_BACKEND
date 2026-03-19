@@ -1,0 +1,63 @@
+spring:
+  datasource:
+    #for localhost  
+    #url: jdbc:mysql://localhost:3306/bmdb?useSSL=false
+    #for ssh tunnel
+    #    url: jdbc:mysql://localhost:3307/bmdb?useSSL=false
+    #for lower env
+#    url: jdbc:mysql://192.168.73.23:3306/bmdb?useSSL=false
+
+    #for production
+#    url: jdbc:mysql://dabdb2-priv.mysql.ap-southeast-5.rds.aliyuncs.com:6033/billerdb-prod?useSSL=false
+#    username: billmgtadm
+#    password: 31LL@dm!
+
+    url: jdbc:mysql://192.168.73.23:3306/bmdb?useSSL=false
+    username: devuser
+    password: Kokas2020!#
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connectionTestQuery: SELECT 1
+      connectionTimeout: 6000
+      idleTimeout: 20000
+      maxLifetime: 30000
+      maximumPoolSize: 100
+      minimumIdle: 30
+  messages:
+    basename: messages/messages
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  servlet:
+     multipart:
+         enabled: true
+         file-size-threshold: 2KB
+         max-file-size: 200MB
+         max-request-size: 215MB
+         location: /tmp
+  rabbitmq:
+    #Development
+#    host: rabbitmq
+    #Production
+    host: 192.168.252.20
+    port: 5672
+    username: bmuser
+    password: BM@2022Que
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+server:
+  port: 8881
+  #port: 8888
+MY_IPS: ${MY_IPS}
